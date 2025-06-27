@@ -1,75 +1,19 @@
-# Nuxt Minimal Starter
+# Hi, I'm John Sanusi– FrontEnd Developer
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to my official GitHub profile. I build clean, responsive, and user-focused web applications using VueJs/NuxtJs and Tailwindcss .
 
-## Setup
+This account showcases my polished projects—built for clients, freelance work, and real-world use. No messy code, no unfinished experiments—just solid, production-ready work.
 
-Make sure to install dependencies:
+**Tech Stack:**  
+Tailwind CSS | VueJs | NuxtJs
 
-```bash
-# npm
-npm install
+**Let's connect:**
 
-# pnpm
-pnpm install
+- Email: johnsanusi18@gmail.com
 
-# yarn
-yarn install
+Looking forward to building something great together.
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+<!---
+JohnSanusi/JohnSanusi is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->

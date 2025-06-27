@@ -32,9 +32,9 @@ let Links = [
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <a
           href="#"
-          class="tracking-wide hover:bg-gray-900 cursor-pointer focus:ring-4 focus:outline-none md:flex md:items-center md:justify-center lg:flex lg:items-center lg:justify-center font-medium rounded-3xl text-sm px-2 py-1 md:text-base md:px-3 md:py-2 md:w-34 border-[1.5px] border-gray-200 text-center transition-all duration-200 mr-4"
+          class="tracking-wide hover:bg-gray-900 cursor-pointer focus:ring-4 focus:outline-none md:flex md:items-center md:justify-center lg:flex lg:items-center lg:justify-center font-medium rounded-3xl text-base px-2 py-1 md:text-base md:px-3 md:py-2 md:w-34 border-[1.5px] border-gray-200 text-center transition-all duration-200 mr-4"
         >
-          <NuxtImg src="/icons/github.svg" alt="github" class="w-8 h-8" />
+          <i class="pi pi-github text-lg mr-1"></i>
           Github
         </a>
       </div>
@@ -47,7 +47,6 @@ let Links = [
         >
           <li v-for="link in Links" :key="link.to">
             <a
-              @click="toggleNavOpen"
               :href="link.to"
               class="block py-2 px-2 text-lg font-light rounded-sm hover:text-blue-500 md:p-0"
               >{{ link.name }}</a
