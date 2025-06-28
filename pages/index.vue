@@ -7,5 +7,6 @@
   </header>
   <main>
     <About />
+    <Services />
   </main>
 </template>

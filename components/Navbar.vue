@@ -32,9 +32,9 @@ let Links = [
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <a
           href="https://github.com/JohnSanusi"
-          class="tracking-wide hover:bg-gray-900 cursor-pointer focus:ring-4 focus:outline-none flex justify-center items-center font-medium rounded-3xl text-base px-2 py-1 md:text-base md:px-3 md:py-2 md:w-34 border-[1.5px] border-gray-200 text-center transition-all duration-200 mr-4"
+          class="tracking-wide hover:bg-gray-900 cursor-pointer flex justify-center items-center font-medium rounded-3xl text-base px-2 py-1 md:text-base md:px-3 md:py-2 md:w-34 border-[1.5px] border-gray-200 text-center transition-all duration-200 mr-4"
         >
-          <i class="pi pi-github text-base "></i>
+          <i class="pi pi-github text-base"></i>
           Github
         </a>
       </div>
