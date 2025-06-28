@@ -68,7 +68,7 @@ const techs = [
         data-aos="fade-in"
         data-aos-duration="1000"
       >
-        I'm an 18 yrs frontend developer in Lagos Nigeria with 2 years of
+        I'm an 18 yrs old full stack developer in Lagos, Nigeria with 2 years of
         experience building clean, responsive, and accessible interfaces. I
         specialie in Nuxt and Vue, and I'm all about writing code that not only
         works - but feels smooth, intuitive, and user-focused.
