@@ -14,7 +14,7 @@ const projects = [
         icon: "/icons/nuxt.svg",
       },
       {
-        name: "Tailwind CSS",
+        name: "Tailwind",
         icon: "/icons/tailwindcss.svg",
       },
       {
