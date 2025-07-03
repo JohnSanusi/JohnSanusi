@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "notivue/nuxt", "unplugin-icons/nuxt"],
+  modules: ["@nuxt/image", "notivue/nuxt",],
 
   css: [
     "~/assets/main.css",
@@ -15,12 +15,5 @@ export default defineNuxtConfig({
   },
   notivue: {},
 
-  runtimeConfig: {
-    smtpHost: "",
-    smtpPort: 587,
-    smtpPass: "",
-    smtpUser: "",
-    clientEmail: "",
-    public: {},
-  },
+ 
 });

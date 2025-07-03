@@ -8,5 +8,10 @@
   <main>
     <About />
     <Services />
+    <Projects />
+    <Contact />
   </main>
+  <footer>
+    <Footer />
+  </footer>
 </template>

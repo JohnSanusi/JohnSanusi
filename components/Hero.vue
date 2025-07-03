@@ -32,9 +32,8 @@
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          Curious by nature, developer by <br />
-          choice. I build, break stuff, <br />
-          then build it better.
+          Building modern web experiences <br />
+          with code and creativity
         </p>
         <div
           class="flex flex-row gap-4 items-center"

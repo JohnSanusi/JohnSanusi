@@ -9,6 +9,10 @@ const techs = [
     icon: "/icons/nuxt.svg",
   },
   {
+    name: "React",
+    icon: "/icons/react.svg",
+  },
+  {
     name: "Tailwind CSS",
     icon: "/icons/tailwindcss.svg",
   },
@@ -39,6 +43,10 @@ const techs = [
   {
     name: "Vercel",
     icon: "/icons/vercel.svg",
+  },
+  {
+    name: "Render",
+    icon: "/icons/render.svg",
   },
 ];
 </script>
