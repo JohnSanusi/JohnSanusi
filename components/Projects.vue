@@ -128,9 +128,7 @@ const projects = [
           </p>
 
           <!-- Tech Stack Icons -->
-          <div
-            class="flex flex-wrap justify-between items-center gap-2 mt-2 max-w-full"
-          >
+          <div class="grid grid-cols-4 gap-4">
             <div
               v-for="(tech, index) in project.techs"
               :key="index"
