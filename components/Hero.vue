@@ -44,7 +44,7 @@
             href="/#projects"
             class="tracking-wide cursor-pointer flex justify-center items-center font-semibold rounded-lg bg-blue-600 px-2 py-2.5 md:w-32 hover:shadow-lg hover:shadow-blue-900 hover:scale-105 transition-all duration-300"
           >
-            Resume <i class="pi pi-download ml-1 text-lg font-semibold"></i>
+            Projects
           </a>
         </div>
       </div>
