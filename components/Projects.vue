@@ -128,7 +128,10 @@ const projects = [
           </p>
 
           <!-- Tech Stack Icons -->
-          <div class="grid grid-cols-3 gap-7">
+          <h3 class="text-base font-bold">Technologies:</h3>
+          <div
+            class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 items-center"
+          >
             <div
               v-for="(tech, index) in project.techs"
               :key="index"
@@ -138,7 +141,7 @@ const projects = [
             >
               <img
                 :src="tech.icon"
-                class="w-6 h-6 filter invert brightness-125"
+                class="w-6 h-6 skrink-0 object-contain filter invert brightness-125"
               />
               <span class="mt-1 text-sm">{{ tech.name }}</span>
             </div>

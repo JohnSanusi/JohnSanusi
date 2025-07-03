@@ -111,6 +111,11 @@ const submitForm = async () => {
           class="border border-gray-400 py-2.5 px-4 font-light text-base rounded-xl w-full bg-gray-900 h-40"
         ></textarea>
       </div>
+      <input
+        type="hidden"
+        name="_next"
+        value="https://nullpad.vercel.app/#contact"
+      />
       <button
         type="submit"
         class="text-white tracking-wide bg-blue-500 hover:bg-blue-600 hover:shadow-blue-500/50 cursor-pointer focus:ring-2 focus:outline-none focus:ring-blue-700 flex justify-center items-center font-medium rounded-4xl text-base px-4 py-3 w-38 text-center transition-all duration-200"
