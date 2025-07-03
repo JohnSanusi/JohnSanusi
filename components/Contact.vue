@@ -65,7 +65,7 @@ const submitForm = async () => {
     <form
       ref="formRef"
       @submit.prevent="submitForm"
-      action="https://formsubmit.co/johnsanusi18@gmail"
+      action="https://formsubmit.co/johnsanusi18@gmail.com"
       method="POST"
       class="flex flex-col gap-4 w-full md:w-[50%]"
     >
@@ -77,7 +77,7 @@ const submitForm = async () => {
             placeholder="John Doe"
             name="name"
             id="name"
-            class="border border-gray-400 py-2.5 px-3 font-light text-base rounded-4xl w-full bg-gray-900"
+            class="border border-gray-400 py-2.5 px-4 font-light text-base rounded-4xl w-full bg-gray-900"
           />
         </div>
         <div class="w-full">
@@ -87,7 +87,7 @@ const submitForm = async () => {
             placeholder="johndoe@gmail.com"
             name="email"
             id="email"
-            class="border border-gray-400 py-2.5 px-3 font-light text-base rounded-4xl w-full bg-gray-900"
+            class="border border-gray-400 py-2.5 px-4 font-light text-base rounded-4xl w-full bg-gray-900"
           />
         </div>
       </div>
@@ -98,7 +98,7 @@ const submitForm = async () => {
           placeholder="Subject"
           name="subject"
           id="subject"
-          class="border border-gray-400 py-2.5 px-3 font-light text-base rounded-4xl w-full bg-gray-900"
+          class="border border-gray-400 py-2.5 px-4 font-light text-base rounded-4xl w-full bg-gray-900"
         />
       </div>
       <div>
@@ -108,7 +108,7 @@ const submitForm = async () => {
           id="message"
           col="30"
           placeholder="Your Message...."
-          class="border border-gray-400 py-2.5 px-3 font-light text-base rounded-xl w-full bg-gray-900 h-40"
+          class="border border-gray-400 py-2.5 px-4 font-light text-base rounded-xl w-full bg-gray-900 h-40"
         ></textarea>
       </div>
       <button
