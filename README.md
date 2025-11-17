@@ -1,11 +1,11 @@
-# Hi, I'm John Sanusi– FrontEnd Developer
+# Hi, I'm John Sanusi– Full-Stack Developer
 
-Welcome to my official GitHub profile. I build clean, responsive, and user-focused web applications using VueJs/NuxtJs and Tailwindcss .
+Welcome to my official GitHub profile. I build clean, responsive, and user-focused web applications using PERN/PEVN stack .
 
 This account showcases my polished projects—built for clients, freelance work, and real-world use. No messy code, no unfinished experiments—just solid, production-ready work.
 
 **Tech Stack:**  
-Tailwind CSS | VueJs | NuxtJs
+Tailwind CSS | VueJs | NuxtJs | Reactjs | Nextjs | postrgesql | Nodejs | Expressjs 
 
 **Let's connect:**
 
