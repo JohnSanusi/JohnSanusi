@@ -1,4 +1,4 @@
-  'use client';
+ 'use client';
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -21,7 +21,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center px-6 pt-32 lg:pt-20 overflow-hidden">
             {/* Animated Background Effects */}
             <motion.div
                 animate={{
@@ -61,9 +61,9 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                    className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none"
+                    className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none z-0"
                 >
-                    <div className="relative w-full max-w-sm aspect-square opacity-30">
+                    <div className="relative w-full max-w-sm aspect-square opacity-50">
                         {/* Animated Rings */}
                         {[...Array(3)].map((_, i) => (
                             <motion.div
@@ -71,7 +71,7 @@ export default function Hero() {
                                 className="absolute inset-0 border border-[#38383a] rounded-full"
                                 animate={{
                                     scale: [1 + i * 0.15, 1.1 + i * 0.15, 1 + i * 0.15],
-                                    opacity: [0.3, 0.15, 0.3],
+                                    opacity: [0.5, 0.25, 0.5],
                                     rotate: [0, 180, 360],
                                 }}
                                 transition={{
@@ -97,21 +97,21 @@ export default function Hero() {
                                 ease: "easeInOut"
                             }}
                         >
-                            <div className="w-32 h-32 bg-[#1c1c1e] border border-[#38383a] rounded-3xl flex items-center justify-center">
-                                <span className="text-4xl font-bold text-[#f5f5f7]">JS</span>
+                            <div className="w-40 h-40 bg-[#1c1c1e] border border-[#38383a] rounded-3xl flex items-center justify-center shadow-2xl">
+                                <span className="text-5xl font-bold text-[#f5f5f7]">JS</span>
                             </div>
                         </motion.div>
 
                         {/* Floating MERN Stack Icons */}
                         {[
-                            { Icon: SiMongodb, label: 'MongoDB', delay: 0, x: -70, y: -35, color: '#47A248' },
-                            { Icon: SiExpress, label: 'Express', delay: 1, x: 70, y: -20, color: '#f5f5f7' },
-                            { Icon: SiReact, label: 'React', delay: 2, x: -55, y: 50, color: '#61DAFB' },
-                            { Icon: SiNodedotjs, label: 'Node.js', delay: 1.5, x: 65, y: 55, color: '#339933' },
+                            { Icon: SiMongodb, label: 'MongoDB', delay: 0, x: -80, y: -40, color: '#47A248' },
+                            { Icon: SiExpress, label: 'Express', delay: 1, x: 80, y: -25, color: '#f5f5f7' },
+                            { Icon: SiReact, label: 'React', delay: 2, x: -65, y: 60, color: '#61DAFB' },
+                            { Icon: SiNodedotjs, label: 'Node.js', delay: 1.5, x: 75, y: 65, color: '#339933' },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
-                                className="absolute w-12 h-12 bg-[#1c1c1e] border border-[#38383a] rounded-xl flex items-center justify-center"
+                                className="absolute w-14 h-14 bg-[#1c1c1e] border border-[#38383a] rounded-xl flex items-center justify-center shadow-xl"
                                 style={{
                                     left: '50%',
                                     top: '50%',
@@ -129,7 +129,7 @@ export default function Hero() {
                                 }}
                             >
                                 <item.Icon 
-                                    className="w-6 h-6"
+                                    className="w-7 h-7"
                                     style={{ color: item.color }}
                                 />
                             </motion.div>
@@ -143,7 +143,7 @@ export default function Hero() {
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative lg:bg-transparent bg-[#000000]/40 lg:backdrop-blur-none backdrop-blur-xl rounded-3xl lg:p-0 p-8 lg:border-none border border-[#38383a]"
+                        className="relative z-10 lg:bg-transparent bg-[#000000]/60 lg:backdrop-blur-none backdrop-blur-2xl rounded-3xl lg:p-0 p-8 lg:border-none border border-[#38383a]/50"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -184,21 +184,7 @@ export default function Hero() {
                             </motion.a>
                         </div>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-[#38383a]">
-                            <div>
-                                <div className="text-3xl font-bold text-[#f5f5f7] mb-1">3+</div>
-                                <div className="text-sm text-[#86868b]">Years Experience</div>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold text-[#f5f5f7] mb-1">20+</div>
-                                <div className="text-sm text-[#86868b]">Projects Done</div>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold text-[#f5f5f7] mb-1">15+</div>
-                                <div className="text-sm text-[#86868b]">Happy Clients</div>
-                            </div>
-                        </div>
+
                     </motion.div>
 
                     {/* Right Column - Visual Element */}
