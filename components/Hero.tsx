@@ -1,4 +1,4 @@
-'use client';
+  'use client';
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -21,7 +21,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 pt-30 overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
             {/* Animated Background Effects */}
             <motion.div
                 animate={{
@@ -56,12 +56,94 @@ export default function Hero() {
 
             {/* Main Content */}
             <div className="max-w-6xl mx-auto w-full z-10">
+                {/* Mobile Background Visual - Same as Desktop Right Side */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                    className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none"
+                >
+                    <div className="relative w-full max-w-sm aspect-square opacity-30">
+                        {/* Animated Rings */}
+                        {[...Array(3)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute inset-0 border border-[#38383a] rounded-full"
+                                animate={{
+                                    scale: [1 + i * 0.15, 1.1 + i * 0.15, 1 + i * 0.15],
+                                    opacity: [0.3, 0.15, 0.3],
+                                    rotate: [0, 180, 360],
+                                }}
+                                transition={{
+                                    duration: 8 + i * 2,
+                                    repeat: Infinity,
+                                    ease: "linear"
+                                }}
+                                style={{
+                                    transformOrigin: 'center',
+                                }}
+                            />
+                        ))}
+
+                        {/* Center Element */}
+                        <motion.div
+                            className="absolute inset-0 flex items-center justify-center"
+                            animate={{
+                                y: [0, -10, 0],
+                            }}
+                            transition={{
+                                duration: 4,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            <div className="w-32 h-32 bg-[#1c1c1e] border border-[#38383a] rounded-3xl flex items-center justify-center">
+                                <span className="text-4xl font-bold text-[#f5f5f7]">JS</span>
+                            </div>
+                        </motion.div>
+
+                        {/* Floating MERN Stack Icons */}
+                        {[
+                            { Icon: SiMongodb, label: 'MongoDB', delay: 0, x: -70, y: -35, color: '#47A248' },
+                            { Icon: SiExpress, label: 'Express', delay: 1, x: 70, y: -20, color: '#f5f5f7' },
+                            { Icon: SiReact, label: 'React', delay: 2, x: -55, y: 50, color: '#61DAFB' },
+                            { Icon: SiNodedotjs, label: 'Node.js', delay: 1.5, x: 65, y: 55, color: '#339933' },
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-12 h-12 bg-[#1c1c1e] border border-[#38383a] rounded-xl flex items-center justify-center"
+                                style={{
+                                    left: '50%',
+                                    top: '50%',
+                                }}
+                                animate={{
+                                    x: [0, item.x, 0],
+                                    y: [0, item.y, 0],
+                                    rotate: [0, 360, 0],
+                                }}
+                                transition={{
+                                    duration: 6,
+                                    repeat: Infinity,
+                                    delay: item.delay,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                <item.Icon 
+                                    className="w-6 h-6"
+                                    style={{ color: item.color }}
+                                />
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
+
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Column - Text Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="relative lg:bg-transparent bg-[#000000]/40 lg:backdrop-blur-none backdrop-blur-xl rounded-3xl lg:p-0 p-8 lg:border-none border border-[#38383a]"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -78,8 +160,8 @@ export default function Hero() {
                             Developer
                         </h1>
 
-                        <p className="text-xl md:text-lg text-[#86868b] mb-8 leading-relaxed">
-                            Hi, I'm <span className="text-[#f5f5f7] font-semibold">John Sanusi</span>.
+                        <p className="text-xl md:text-2xl text-[#86868b] mb-8 leading-relaxed">
+                            Hi, I'm <span className="text-[#f5f5f7] font-semibold">John Sanusi</span>. 
                             I architect scalable full-stack solutions using MongoDB, Express, React, and Node.js—transforming complex ideas into elegant digital experiences.
                         </p>
 
@@ -103,7 +185,7 @@ export default function Hero() {
                         </div>
 
                         {/* Stats */}
-                        { /* <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-[#38383a]">
+                        <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-[#38383a]">
                             <div>
                                 <div className="text-3xl font-bold text-[#f5f5f7] mb-1">3+</div>
                                 <div className="text-sm text-[#86868b]">Years Experience</div>
@@ -116,7 +198,7 @@ export default function Hero() {
                                 <div className="text-3xl font-bold text-[#f5f5f7] mb-1">15+</div>
                                 <div className="text-sm text-[#86868b]">Happy Clients</div>
                             </div>
-                        </div>*/}
+                        </div>
                     </motion.div>
 
                     {/* Right Column - Visual Element */}
@@ -191,7 +273,7 @@ export default function Hero() {
                                         ease: "easeInOut"
                                     }}
                                 >
-                                    <item.Icon
+                                    <item.Icon 
                                         className="w-8 h-8"
                                         style={{ color: item.color }}
                                     />
@@ -202,12 +284,12 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
+            {/* Scroll Indicator - Desktop Only */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+                className="hidden lg:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
             >
                 <span className="text-xs text-[#86868b] font-medium">Scroll to explore</span>
                 <motion.div
