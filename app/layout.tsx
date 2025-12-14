@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <footer className="py-8 text-center text-sm text-[#86868b] bg-[#000000] border-t border-[#38383a]">
           <p>© {new Date().getFullYear()} John Sanusi. All rights reserved.</p>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
