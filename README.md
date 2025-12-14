@@ -1,6 +1,6 @@
 # Hi, I'm John Sanusi– Full-Stack Developer
 
-Welcome to my official GitHub profile. I build clean, responsive, and user-focused web applications using PERN/PEVN stack .
+Welcome to my official GitHub profile. I build clean, responsive, and user-focused web applications using MERN/MEVN stack .
 
 This account showcases my polished projects—built for clients, freelance work, and real-world use. No messy code, no unfinished experiments—just solid, production-ready work.
 
