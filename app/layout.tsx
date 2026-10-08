@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Navbar />
         <main>{children}</main>
-        <footer className="py-8 text-center text-sm text-[#86868b] bg-[#000000] border-t border-[#38383a]">
+        <footer className="border-t border-white/10 bg-[#07090d] py-8 text-center text-sm text-[#8a8a91]">
           <p>© {new Date().getFullYear()} John Sanusi. All rights reserved.</p>
         </footer>
         <Analytics />

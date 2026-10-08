@@ -34,61 +34,62 @@ export default function Contact() {
     }
 
     return (
-        <section id="contact" className="py-32 px-6 bg-[#000000] relative overflow-hidden">
-            {/* Background Decoration */}
+        <section id="contact" className="relative overflow-hidden px-6 py-32">
             <motion.div
                 animate={{
                     scale: [1, 1.1, 1],
-                    opacity: [0.02, 0.04, 0.02],
+                    opacity: [0.02, 0.05, 0.02],
                 }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute right-0 top-1/4 w-96 h-96 bg-[#1d1d1f] rounded-full blur-[120px]"
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute right-[-8%] top-1/4 h-80 w-80 rounded-full bg-violet-500/15 blur-[120px]"
             />
 
-            <div className="max-w-2xl mx-auto relative z-10">
+            <div className="relative z-10 mx-auto max-w-2xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <div className="text-center mb-16">
+                    <div className="mb-16 text-center">
                         <motion.div
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, type: "spring" }}
-                            className="inline-flex items-center justify-center w-20 h-20 mb-6 bg-[#1c1c1e] border border-[#38383a] rounded-2xl"
+                            transition={{ duration: 0.5, type: 'spring' }}
+                            className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-violet-500/20 to-sky-500/10"
                         >
-                            <Mail className="w-10 h-10 text-[#f5f5f7]" />
+                            <Mail className="h-10 w-10 text-[#f5f5f7]" />
                         </motion.div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#f5f5f7] mb-4 tracking-tight">
+                        <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-[#8a8a91]">
+                            Contact
+                        </p>
+                        <h2 className="mb-4 text-4xl font-bold tracking-tight text-[#f5f5f7] md:text-5xl">
                             Get in Touch
                         </h2>
                         <motion.div
-                            className="h-1 bg-[#f5f5f7] rounded-full mx-auto mb-6"
+                            className="mx-auto mb-6 h-1 w-[100px] rounded-full bg-gradient-to-r from-violet-400 via-sky-400 to-emerald-400"
                             initial={{ width: 0 }}
                             whileInView={{ width: '100px' }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         />
-                        <p className="text-[#86868b] text-xl">
-                            Have a project in mind or just want to say hi? I'd love to hear from you.
+                        <p className="text-xl text-[#a8afb9]">
+                            Have a project in mind or just want to say hi? I&apos;d love to hear from you.
                         </p>
                     </div>
 
                     <motion.form
                         onSubmit={handleSubmit}
-                        className="space-y-6"
+                        className="space-y-6 rounded-[28px] border border-white/10 bg-[#101318]/85 p-6 shadow-[0_0_40px_rgba(59,130,246,0.08)] backdrop-blur-sm md:p-8"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        {/* Name Field */}
                         <div className="relative">
-                            <label htmlFor="name" className="block text-sm font-medium text-[#86868b] mb-2">
+                            <label htmlFor="name" className="mb-2 block text-sm font-medium text-[#b6bcc6]">
                                 Name
                             </label>
                             <div className="relative">
@@ -96,10 +97,10 @@ export default function Contact() {
                                     className="absolute left-4 top-1/2 -translate-y-1/2"
                                     animate={{
                                         scale: focusedField === 'name' ? 1.1 : 1,
-                                        color: focusedField === 'name' ? '#f5f5f7' : '#86868b',
+                                        color: focusedField === 'name' ? '#f5f5f7' : '#8a8a91',
                                     }}
                                 >
-                                    <User className="w-5 h-5" />
+                                    <User className="h-5 w-5" />
                                 </motion.div>
                                 <input
                                     type="text"
@@ -108,15 +109,14 @@ export default function Contact() {
                                     required
                                     onFocus={() => setFocusedField('name')}
                                     onBlur={() => setFocusedField(null)}
-                                    className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#1c1c1e] border border-[#38383a] text-[#f5f5f7] focus:border-[#f5f5f7] focus:ring-1 focus:ring-[#f5f5f7] outline-none transition-all placeholder-[#515155]"
+                                    className="w-full rounded-xl border border-white/10 bg-[#0d1117] py-4 pl-12 pr-4 text-[#f5f5f7] outline-none transition-all placeholder:text-[#5f6775] focus:border-violet-400/60 focus:ring-1 focus:ring-violet-400/40"
                                     placeholder="John Doe"
                                 />
                             </div>
                         </div>
 
-                        {/* Email Field */}
                         <div className="relative">
-                            <label htmlFor="email" className="block text-sm font-medium text-[#86868b] mb-2">
+                            <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#b6bcc6]">
                                 Email
                             </label>
                             <div className="relative">
@@ -124,10 +124,10 @@ export default function Contact() {
                                     className="absolute left-4 top-1/2 -translate-y-1/2"
                                     animate={{
                                         scale: focusedField === 'email' ? 1.1 : 1,
-                                        color: focusedField === 'email' ? '#f5f5f7' : '#86868b',
+                                        color: focusedField === 'email' ? '#f5f5f7' : '#8a8a91',
                                     }}
                                 >
-                                    <Mail className="w-5 h-5" />
+                                    <Mail className="h-5 w-5" />
                                 </motion.div>
                                 <input
                                     type="email"
@@ -136,15 +136,14 @@ export default function Contact() {
                                     required
                                     onFocus={() => setFocusedField('email')}
                                     onBlur={() => setFocusedField(null)}
-                                    className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#1c1c1e] border border-[#38383a] text-[#f5f5f7] focus:border-[#f5f5f7] focus:ring-1 focus:ring-[#f5f5f7] outline-none transition-all placeholder-[#515155]"
+                                    className="w-full rounded-xl border border-white/10 bg-[#0d1117] py-4 pl-12 pr-4 text-[#f5f5f7] outline-none transition-all placeholder:text-[#5f6775] focus:border-violet-400/60 focus:ring-1 focus:ring-violet-400/40"
                                     placeholder="john@example.com"
                                 />
                             </div>
                         </div>
 
-                        {/* Message Field */}
                         <div className="relative">
-                            <label htmlFor="message" className="block text-sm font-medium text-[#86868b] mb-2">
+                            <label htmlFor="message" className="mb-2 block text-sm font-medium text-[#b6bcc6]">
                                 Message
                             </label>
                             <div className="relative">
@@ -152,10 +151,10 @@ export default function Contact() {
                                     className="absolute left-4 top-4"
                                     animate={{
                                         scale: focusedField === 'message' ? 1.1 : 1,
-                                        color: focusedField === 'message' ? '#f5f5f7' : '#86868b',
+                                        color: focusedField === 'message' ? '#f5f5f7' : '#8a8a91',
                                     }}
                                 >
-                                    <MessageSquare className="w-5 h-5" />
+                                    <MessageSquare className="h-5 w-5" />
                                 </motion.div>
                                 <textarea
                                     id="message"
@@ -164,49 +163,47 @@ export default function Contact() {
                                     rows={5}
                                     onFocus={() => setFocusedField('message')}
                                     onBlur={() => setFocusedField(null)}
-                                    className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#1c1c1e] border border-[#38383a] text-[#f5f5f7] focus:border-[#f5f5f7] focus:ring-1 focus:ring-[#f5f5f7] outline-none transition-all resize-none placeholder-[#515155]"
+                                    className="w-full resize-none rounded-xl border border-white/10 bg-[#0d1117] py-4 pl-12 pr-4 text-[#f5f5f7] outline-none transition-all placeholder:text-[#5f6775] focus:border-violet-400/60 focus:ring-1 focus:ring-violet-400/40"
                                     placeholder="Tell me about your project..."
                                 />
                             </div>
                         </div>
 
-                        {/* Submit Button */}
                         <motion.button
                             type="submit"
                             disabled={status === 'loading'}
                             whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
                             whileTap={{ scale: status === 'loading' ? 1 : 0.98 }}
-                            className="relative w-full py-4 bg-[#f5f5f7] text-[#000000] font-semibold rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden hover:bg-[#e8e8ed]"
+                            className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-400 via-sky-400 to-emerald-400 px-6 py-4 font-semibold text-[#0a0d12] transition-all hover:shadow-[0_0_30px_rgba(96,165,250,0.35)] disabled:cursor-not-allowed disabled:opacity-60"
                         >
                             <span className="relative flex items-center justify-center gap-2">
                                 {status === 'loading' ? (
                                     <>
                                         <motion.div
                                             animate={{ rotate: 360 }}
-                                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                            className="w-5 h-5 border-2 border-[#000000] border-t-transparent rounded-full"
+                                            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                                            className="h-5 w-5 rounded-full border-2 border-[#0a0d12] border-t-transparent"
                                         />
                                         Sending...
                                     </>
                                 ) : (
                                     <>
                                         Send Message
-                                        <Send className="w-5 h-5" />
+                                        <Send className="h-5 w-5" />
                                     </>
                                 )}
                             </span>
                         </motion.button>
 
-                        {/* Status Messages */}
                         <AnimatePresence>
                             {status === 'success' && (
                                 <motion.div
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
-                                    className="flex items-center justify-center gap-2 text-[#f5f5f7] bg-[#1c1c1e] border border-[#38383a] rounded-xl p-4"
+                                    className="flex items-center justify-center gap-2 rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-4 text-[#dfffe8]"
                                 >
-                                    <CheckCircle className="w-5 h-5" />
+                                    <CheckCircle className="h-5 w-5" />
                                     <span className="font-medium">Message sent successfully!</span>
                                 </motion.div>
                             )}
@@ -215,9 +212,9 @@ export default function Contact() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
-                                    className="flex items-center justify-center gap-2 text-[#f5f5f7] bg-[#1c1c1e] border border-[#38383a] rounded-xl p-4"
+                                    className="flex items-center justify-center gap-2 rounded-xl border border-rose-400/30 bg-rose-500/10 p-4 text-[#ffe4ea]"
                                 >
-                                    <XCircle className="w-5 h-5" />
+                                    <XCircle className="h-5 w-5" />
                                     <span className="font-medium">Something went wrong. Please try again.</span>
                                 </motion.div>
                             )}

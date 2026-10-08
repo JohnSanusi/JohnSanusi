@@ -24,64 +24,56 @@ export default function Navbar() {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl px-6"
+                className="fixed top-6 left-1/2 z-50 w-full max-w-3xl -translate-x-1/2 px-6"
             >
-                <div className={`flex items-center justify-between gap-4 bg-[#1c1c1e]/80 backdrop-blur-xl rounded-full px-6 py-4 border border-[#38383a] transition-all duration-300 ${scrolled ? 'shadow-lg shadow-black/20' : ''
-                    }`}>
-                    {/* Logo */}
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
+                <div
+                    className={`flex items-center justify-between gap-4 rounded-full border px-6 py-4 backdrop-blur-xl transition-all duration-300 ${
+                        scrolled
+                            ? 'border-white/15 bg-[#0f1117]/90 shadow-[0_0_30px_rgba(96,165,250,0.15)]'
+                            : 'border-white/10 bg-[#101318]/75'
+                    }`}
+                >
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Link href="/" className="flex items-center justify-center">
                             <div className="relative flex items-center gap-2">
-                                {/* Bracket design */}
                                 <div className="flex items-center">
-                                    <span className="text-[#f5f5f7] text-2xl font-bold">&lt;</span>
-                                    <span className="text-[#f5f5f7] text-xl font-bold mx-1">JS</span>
-                                    <span className="text-[#f5f5f7] text-2xl font-bold">/&gt;</span>
+                                    <span className="text-2xl font-bold text-[#f5f5f7]">&lt;</span>
+                                    <span className="mx-1 text-xl font-bold text-[#f5f5f7]">JS</span>
+                                    <span className="text-2xl font-bold text-[#f5f5f7]">/&gt;</span>
                                 </div>
                             </div>
                         </Link>
                     </motion.div>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-2">
+                    <div className="hidden items-center gap-2 md:flex">
                         <NavLink href="#about">About</NavLink>
                         <NavLink href="#projects">Projects</NavLink>
                         <NavLink href="#contact">Contact</NavLink>
                     </div>
 
-                    {/* GitHub Link */}
                     <motion.a
                         href="https://github.com/johnsanusi"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="hidden md:flex items-center justify-center w-10 h-10 text-[#86868b] hover:text-[#f5f5f7] transition-colors duration-200 rounded-full hover:bg-[#2c2c2e]"
+                        className="hidden h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#b6bcc6] transition-colors duration-200 hover:border-white/20 hover:text-[#f5f5f7] md:flex"
                         aria-label="GitHub"
                     >
-                        <Github className="w-5 h-5" />
+                        <Github className="h-5 w-5" />
                     </motion.a>
 
-                    {/* Mobile Menu Button */}
                     <motion.button
                         whileTap={{ scale: 0.9 }}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden flex items-center justify-center w-10 h-10 text-[#86868b] hover:text-[#f5f5f7] rounded-full hover:bg-[#2c2c2e] transition-colors"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#b6bcc6] transition-colors hover:border-white/20 hover:text-[#f5f5f7] md:hidden"
                         aria-label="Menu"
                     >
-                        {mobileMenuOpen ? (
-                            <X className="w-5 h-5" />
-                        ) : (
-                            <Menu className="w-5 h-5" />
-                        )}
+                        {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                     </motion.button>
                 </div>
             </motion.nav>
 
-            {/* Mobile Menu */}
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
@@ -89,9 +81,9 @@ export default function Navbar() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed top-24 left-1/2 -translate-x-1/2 z-40 md:hidden w-[90%] max-w-sm bg-[#1c1c1e]/95 backdrop-blur-xl rounded-3xl border border-[#38383a] shadow-xl"
+                        className="fixed left-1/2 top-24 z-40 w-[90%] max-w-sm -translate-x-1/2 rounded-3xl border border-white/10 bg-[#101318]/95 shadow-[0_0_40px_rgba(59,130,246,0.12)] backdrop-blur-xl md:hidden"
                     >
-                        <div className="px-6 py-6 space-y-2">
+                        <div className="space-y-2 px-6 py-6">
                             <MobileNavLink href="#about" onClick={() => setMobileMenuOpen(false)}>
                                 About
                             </MobileNavLink>
@@ -101,14 +93,14 @@ export default function Navbar() {
                             <MobileNavLink href="#contact" onClick={() => setMobileMenuOpen(false)}>
                                 Contact
                             </MobileNavLink>
-                            <div className="pt-2 mt-2 border-t border-[#38383a]">
+                            <div className="mt-2 border-t border-white/10 pt-2">
                                 <a
                                     href="https://github.com/johnsanusi"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 px-4 py-3 text-[#86868b] hover:text-[#f5f5f7] hover:bg-[#2c2c2e] rounded-xl transition-all"
+                                    className="flex items-center gap-3 rounded-xl px-4 py-3 text-[#b6bcc6] transition-all hover:bg-white/5 hover:text-[#f5f5f7]"
                                 >
-                                    <Github className="w-5 h-5" />
+                                    <Github className="h-5 w-5" />
                                     <span className="text-sm font-medium">GitHub</span>
                                 </a>
                             </div>
@@ -124,7 +116,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
     return (
         <Link
             href={href}
-            className="px-5 py-2 text-sm font-medium text-[#86868b] hover:text-[#f5f5f7] rounded-full hover:bg-[#2c2c2e] transition-all duration-200"
+            className="rounded-full px-5 py-2 text-sm font-medium text-[#a8afb9] transition-all duration-200 hover:bg-white/5 hover:text-[#f5f5f7]"
         >
             {children}
         </Link>
@@ -134,7 +126,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 function MobileNavLink({
     href,
     onClick,
-    children
+    children,
 }: {
     href: string;
     onClick: () => void;
@@ -144,7 +136,7 @@ function MobileNavLink({
         <Link
             href={href}
             onClick={onClick}
-            className="block px-4 py-3 text-base font-medium text-[#f5f5f7] hover:text-[#86868b] hover:bg-[#2c2c2e] rounded-xl transition-all"
+            className="block rounded-xl px-4 py-3 text-base font-medium text-[#f5f5f7] transition-all hover:bg-white/5 hover:text-[#b6bcc6]"
         >
             {children}
         </Link>
