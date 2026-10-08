@@ -33,17 +33,18 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="relative overflow-hidden px-6 py-32">
+        <section id="projects" className="py-32 px-6 bg-[#000000] relative overflow-hidden">
+            {/* Background Decoration */}
             <motion.div
                 animate={{
                     scale: [1, 1.1, 1],
-                    opacity: [0.02, 0.05, 0.02],
+                    opacity: [0.02, 0.04, 0.02],
                 }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute right-[-10%] top-20 h-[500px] w-[500px] rounded-full bg-sky-500/12 blur-[120px]"
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#1d1d1f] rounded-full blur-[120px]"
             />
 
-            <div className="relative z-10 mx-auto max-w-6xl">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -51,14 +52,11 @@ export default function Projects() {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-16"
                 >
-                    <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-[#8a8a91]">
-                        Portfolio
-                    </p>
-                    <h2 className="mb-5 text-4xl font-bold tracking-tight text-[#f5f5f7] md:text-5xl">
+                    <h2 className="text-4xl md:text-5xl font-bold text-[#f5f5f7] mb-4 tracking-tight">
                         Selected Projects
                     </h2>
                     <motion.div
-                        className="h-1 w-[100px] rounded-full bg-gradient-to-r from-violet-400 via-sky-400 to-emerald-400"
+                        className="h-1 bg-[#f5f5f7] rounded-full"
                         initial={{ width: 0 }}
                         whileInView={{ width: '100px' }}
                         viewport={{ once: true }}
@@ -66,7 +64,7 @@ export default function Projects() {
                     />
                 </motion.div>
 
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} index={index} />
                     ))}
@@ -87,41 +85,49 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
-            className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#101318]/85 p-8 shadow-[0_0_30px_rgba(59,130,246,0.08)] transition-all duration-300 hover:border-white/20"
+            className="group relative bg-[#1c1c1e] rounded-3xl p-8 shadow-lg border border-[#38383a] overflow-hidden transition-all duration-300 hover:border-[#48484a]"
         >
+            {/* Subtle Hover Background */}
             <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-violet-500/8 via-transparent to-emerald-500/8"
+                className="absolute inset-0 bg-[#2c2c2e]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isHovered ? 1 : 0 }}
                 transition={{ duration: 0.3 }}
             />
 
             <div className="relative z-10">
+                {/* Project Image */}
                 <motion.div
-                    className="relative mb-6 h-48 overflow-hidden rounded-2xl border border-white/10 bg-[#121821]"
+                    className="relative w-full h-48 mb-6 rounded-2xl overflow-hidden bg-[#2c2c2e]"
                     animate={isHovered ? { scale: 1.02 } : { scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <img src={project.image} alt={project.title} className="h-full w-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#101318] via-transparent to-transparent opacity-70" />
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1e] via-transparent to-transparent opacity-60" />
                 </motion.div>
 
                 <motion.h3
-                    className="mb-4 text-2xl font-semibold text-[#f5f5f7]"
+                    className="text-2xl font-semibold text-[#f5f5f7] mb-4"
                     animate={isHovered ? { x: 3 } : { x: 0 }}
                     transition={{ duration: 0.2 }}
                 >
                     {project.title}
                 </motion.h3>
 
-                <p className="mb-8 text-lg leading-relaxed text-[#a8afb9]">{project.description}</p>
+                <p className="text-[#86868b] mb-8 leading-relaxed text-lg">
+                    {project.description}
+                </p>
 
-                <div className="mb-8 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-8">
                     {project.tags.map((tag, i) => (
                         <motion.span
                             key={i}
                             whileHover={{ scale: 1.05 }}
-                            className="cursor-default rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-[#e3e7ef]"
+                            className="text-xs font-medium text-[#f5f5f7] bg-[#38383a] px-3 py-1 rounded-full cursor-default transition-all hover:bg-[#48484a]"
                         >
                             {tag}
                         </motion.span>
@@ -134,25 +140,26 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ x: 3 }}
-                        className="group/link flex items-center text-sm font-medium text-[#b6bcc6] transition-colors hover:text-[#f5f5f7]"
+                        className="flex items-center text-sm font-medium text-[#86868b] hover:text-[#f5f5f7] transition-colors group/link"
                     >
-                        <Github className="mr-2 h-5 w-5" />
+                        <Github className="w-5 h-5 mr-2" />
                         Code
-                        <ArrowUpRight className="ml-1 h-4 w-4 opacity-0 transition-opacity group-hover/link:opacity-100" />
+                        <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
                     </motion.a>
                     <motion.a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ x: 3 }}
-                        className="group/link flex items-center text-sm font-medium text-[#b6bcc6] transition-colors hover:text-[#f5f5f7]"
+                        className="flex items-center text-sm font-medium text-[#86868b] hover:text-[#f5f5f7] transition-colors group/link"
                     >
-                        <ExternalLink className="mr-2 h-5 w-5" />
+                        <ExternalLink className="w-5 h-5 mr-2" />
                         Live Demo
-                        <ArrowUpRight className="ml-1 h-4 w-4 opacity-0 transition-opacity group-hover/link:opacity-100" />
+                        <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
                     </motion.a>
                 </div>
             </div>
         </motion.div>
     );
 }
+

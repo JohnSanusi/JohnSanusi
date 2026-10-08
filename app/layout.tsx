@@ -12,7 +12,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "John Sanusi | Full Stack Developer",
-  description: "Portfolio of John Sanusi, a Full Stack Developer specializing in the MERN stack.",
+  description:
+    "Portfolio of John Sanusi, a Full Stack Developer specializing in the MERN stack.",
 };
 
 export default function RootLayout({
@@ -25,7 +26,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Navbar />
         <main>{children}</main>
-        <footer className="border-t border-white/10 bg-[#07090d] py-8 text-center text-sm text-[#8a8a91]">
+        <footer className="py-8 text-center text-sm text-[#86868b] bg-[#000000] border-t border-[#38383a]">
           <p>© {new Date().getFullYear()} John Sanusi. All rights reserved.</p>
         </footer>
         <Analytics />
