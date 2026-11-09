@@ -47,8 +47,7 @@ const additionalSkills = [
 ];
 
 const stats = [
-    { value: '5+', label: 'Years building' },
-    { value: '12+', label: 'Projects shipped' },
+    { value: '3+', label: 'Years building' },
     { value: 'Full-Stack', label: 'Core focus' },
 ];
 

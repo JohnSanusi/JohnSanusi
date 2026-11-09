@@ -27,6 +27,16 @@ const projects: Project[] = [
         image: null,
     },
     {
+        title: 'Ex2325 Fashion Store',
+        category: 'Full-Stack Development',
+        status: 'Completed',
+        description: 'A clean and responsive e-commerce frontend built with Next.js for a handmade fashion brand. Features a modern product catalog, fast UI, and scalable structure ready for future cart and checkout features.',
+        tags: ['Next.js', 'Tailwind', 'Node.js', 'Express', 'TypeScript'],
+        github: 'https://github.com/JohnSanusi/EX2325-Shoe-Store',
+        demo: 'https://ex2325.vercel.app',
+        image: '/ex2325.png',
+    },
+    {
         title: 'EzzyGabby PhotoGraphy',
         category: 'Frontend Development',
         status: 'Completed',
