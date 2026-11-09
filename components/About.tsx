@@ -4,42 +4,52 @@ import { motion } from 'framer-motion';
 import {
     SiJavascript,
     SiTypescript,
-    SiHtml5,
-    SiCss3,
     SiReact,
     SiNextdotjs,
     SiNodedotjs,
+    SiExpress,
     SiMongodb,
+    SiSupabase,
     SiTailwindcss,
     SiGit,
-    SiDocker,
+    SiGithub,
+    SiVite,
+    SiVercel,
     SiVuedotjs,
     SiNuxtdotjs,
 } from 'react-icons/si';
 
-const languages = [
-    { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
-    { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
-    { name: 'HTML', icon: SiHtml5, color: '#E34F26' },
-    { name: 'CSS', icon: SiCss3, color: '#1572B6' },
-];
-
-const tools = [
+const frontendSkills = [
     { name: 'React', icon: SiReact, color: '#61DAFB' },
     { name: 'Next.js', icon: SiNextdotjs, color: '#ffffff' },
+    { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+    { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+    { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
+];
+
+const backendSkills = [
+    { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
+    { name: 'Express.js', icon: SiExpress, color: '#f5f5f7' },
+    { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+    { name: 'Supabase', icon: SiSupabase, color: '#3ECF8E' },
+];
+
+const toolSkills = [
+    { name: 'Git', icon: SiGit, color: '#F05032' },
+    { name: 'GitHub', icon: SiGithub, color: '#ffffff' },
+    { name: 'Vite', icon: SiVite, color: '#646CFF' },
+    { name: 'Vercel', icon: SiVercel, color: '#ffffff' },
+];
+
+const additionalSkills = [
     { name: 'Vue.js', icon: SiVuedotjs, color: '#4FC08D' },
     { name: 'Nuxt.js', icon: SiNuxtdotjs, color: '#00DC82' },
-    { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-    { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-    { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
-    { name: 'Git', icon: SiGit, color: '#F05032' },
-    { name: 'Docker', icon: SiDocker, color: '#2496ED' },
 ];
 
 const stats = [
     { value: '5+', label: 'Years building' },
     { value: '12+', label: 'Projects shipped' },
-    { value: 'MERN', label: 'Core stack' },
+    { value: 'Full-Stack', label: 'Core focus' },
 ];
 
 export default function About() {
@@ -67,7 +77,7 @@ export default function About() {
                             About
                         </p>
                         <h2 className="mb-6 max-w-xl text-4xl font-bold tracking-[-0.06em] text-[#f5f5f7] md:text-5xl lg:text-6xl">
-                            Building digital products that feel as good as they scale.
+                            Building reliable full-stack applications with modern web architecture.
                         </h2>
                         <motion.div
                             className="h-1 w-[100px] rounded-full bg-gradient-to-r from-violet-400 via-sky-400 to-emerald-400"
@@ -104,16 +114,18 @@ export default function About() {
                 >
                     <div className="absolute -left-4 top-6 h-[70%] w-1 rounded-full bg-gradient-to-b from-violet-400 via-sky-400 to-emerald-400" />
                     <p className="mb-4 pl-8 text-lg leading-relaxed text-[#a8afb9] md:text-xl">
-                        I&apos;m a full-stack developer specializing in the MERN ecosystem, with expertise in building modern, scalable web applications. My focus is on creating clean, efficient code and delivering seamless user experiences.
+                        I am a Full-Stack Developer building responsive web applications, interactive dashboards, and scalable backend services. My experience spans frontend interface design and backend implementation, working directly with REST APIs, authentication flows, and database integration.
                     </p>
                     <p className="pl-8 text-lg leading-relaxed text-[#a8afb9] md:text-xl">
-                        With a strong foundation in JavaScript and TypeScript, I work across the entire stack—from crafting responsive interfaces with React and Vue to building robust APIs with Node.js and Express. I&apos;m passionate about staying current with industry trends and continuously refining my craft.
+                        I have delivered role-based applications, member portals, and database-backed platforms from concept to deployment. With core strengths in React, Next.js, TypeScript, and Node.js—alongside backend integration using MongoDB and Supabase—I can step into existing development teams and contribute to ongoing projects with clean code and dependable execution.
                     </p>
                 </motion.div>
 
                 <div className="mt-20 grid gap-16 md:grid-cols-2">
-                    <SkillsSection title="Languages" items={languages} />
-                    <SkillsSection title="Tools & Technologies" items={tools} />
+                    <SkillsSection title="Frontend Development" items={frontendSkills} />
+                    <SkillsSection title="Backend Development" items={backendSkills} />
+                    <SkillsSection title="Tools & Platforms" items={toolSkills} />
+                    <SkillsSection title="Additional Experience" items={additionalSkills} />
                 </div>
             </div>
         </section>
@@ -135,14 +147,14 @@ function SkillsSection({
             transition={{ duration: 0.8, delay: 0.3 }}
         >
             <h3 className="mb-8 text-2xl font-semibold text-[#f5f5f7]">{title}</h3>
-            <div className="grid grid-cols-3 gap-4 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {items.map((item, index) => (
                     <motion.div
-                        key={index}
+                        key={item.name}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 + index * 0.05 }}
+                        transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
                         whileHover={{
                             scale: 1.04,
                             transition: { duration: 0.2 },
@@ -175,4 +187,3 @@ function SkillsSection({
         </motion.div>
     );
 }
-

@@ -1,29 +1,46 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { Github, ExternalLink, ArrowUpRight, Clock } from 'lucide-react';
 import { useState } from 'react';
 
-const projects = [
+interface Project {
+    title: string;
+    category?: string;
+    status?: string;
+    description: string;
+    tags: string[];
+    github?: string | null;
+    demo?: string | null;
+    image?: string | null;
+}
+
+const projects: Project[] = [
+    {
+        title: 'DE-BLOSSOM',
+        category: 'Full-Stack Development',
+        status: 'In Development',
+        description: 'A cooperative savings and loan management platform designed to digitise member contributions, savings records and loan administration. Features separate administrative and member dashboards, role-based access control, savings and loan workflows, and financial data visualisation.',
+        tags: ['Next.js', 'TypeScript', 'Supabase'],
+        github: null,
+        demo: null,
+        image: null,
+    },
     {
         title: 'EzzyGabby PhotoGraphy',
-        description: "A minimalist and modern portfolio site built to showcase creative work in a clean, distraction-free layout. Designed to reflect the photographer's visual style and provide a seamless browsing experience",
+        category: 'Frontend Development',
+        status: 'Completed',
+        description: "A minimalist and modern portfolio site built to showcase creative work in a clean, distraction-free layout. Designed to reflect the photographer's visual style and provide a seamless browsing experience.",
         tags: ['Nuxt.js', 'Tailwind', 'TypeScript'],
         github: 'https://github.com/JohnSanusi/EZZYGABBY',
         demo: 'https://ezzygabby.vercel.app',
         image: '/ezzy.png',
     },
     {
-        title: 'Ex2325 Fashion Store',
-        description: 'A clean and responsive e-commerce frontend built with Next.js for a handmade fashion brand. Features a modern product catalog, fast UI, and scalable structure ready for future cart and checkout features.',
-        tags: ['Next.js', 'Tailwind', 'Node.js', 'Express', 'TypeScript'],
-        github: 'https://github.com/JohnSanusi/EX2325-Shoe-Store',
-        demo: 'https://ex2325.vercel.app',
-        image: '/ex2325.png',
-    },
-    {
         title: 'Lumea Collections',
-        description: 'A sleek and modern e-commerce website built for a startup and small brand to sell products online with ease. Designed with a minimalist layout and smooth navigation to deliver a seamless shopping experience for customers',
+        category: 'Full-Stack Development',
+        status: 'Completed',
+        description: 'A sleek and modern e-commerce website built for a startup and small brand to sell products online with ease. Designed with a minimalist layout and smooth navigation to deliver a seamless shopping experience for customers.',
         tags: ['Next.js', 'Tailwind', 'Node.js', 'Express', 'TypeScript'],
         github: 'https://github.com/JohnSanusi/LUMEA',
         demo: 'https://lumeax.vercel.app',
@@ -52,6 +69,9 @@ export default function Projects() {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-16"
                 >
+                    <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-[#8a8a91]">
+                        Portfolio
+                    </p>
                     <h2 className="text-4xl md:text-5xl font-bold text-[#f5f5f7] mb-4 tracking-tight">
                         Selected Projects
                     </h2>
@@ -66,7 +86,7 @@ export default function Projects() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} index={index} />
+                        <ProjectCard key={project.title} project={project} index={index} />
                     ))}
                 </div>
             </div>
@@ -74,7 +94,7 @@ export default function Projects() {
     );
 }
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -85,7 +105,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
-            className="group relative bg-[#1c1c1e] rounded-3xl p-8 shadow-lg border border-[#38383a] overflow-hidden transition-all duration-300 hover:border-[#48484a]"
+            className="group relative bg-[#1c1c1e] rounded-3xl p-8 shadow-lg border border-[#38383a] overflow-hidden transition-all duration-300 hover:border-[#48484a] flex flex-col justify-between"
         >
             {/* Subtle Hover Background */}
             <motion.div
@@ -95,30 +115,54 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 transition={{ duration: 0.3 }}
             />
 
-            <div className="relative z-10">
-                {/* Project Image */}
+            <div className="relative z-10 flex-1 flex flex-col">
+                {/* Project Image / Visual */}
                 <motion.div
                     className="relative w-full h-48 mb-6 rounded-2xl overflow-hidden bg-[#2c2c2e]"
                     animate={isHovered ? { scale: 1.02 } : { scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1e] via-transparent to-transparent opacity-60" />
+                    {project.image ? (
+                        <>
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1e] via-transparent to-transparent opacity-60" />
+                        </>
+                    ) : (
+                        <div className="relative w-full h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#15171c] via-[#1a1e26] to-[#12141a] border border-white/5">
+                            <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 rounded-full border border-sky-400/20 bg-sky-400/10 text-sky-300 text-xs font-medium">
+                                <Clock className="w-3 h-3" />
+                                {project.status || 'In Development'}
+                            </div>
+                            <span className="text-xl font-bold tracking-tight text-[#f5f5f7]">
+                                {project.title}
+                            </span>
+                            <span className="text-xs text-[#86868b] mt-1 text-center">
+                                {project.category || 'Full-Stack Development'}
+                            </span>
+                        </div>
+                    )}
                 </motion.div>
 
-                <motion.h3
-                    className="text-2xl font-semibold text-[#f5f5f7] mb-4"
-                    animate={isHovered ? { x: 3 } : { x: 0 }}
-                    transition={{ duration: 0.2 }}
-                >
-                    {project.title}
-                </motion.h3>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                    <motion.h3
+                        className="text-2xl font-semibold text-[#f5f5f7]"
+                        animate={isHovered ? { x: 3 } : { x: 0 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        {project.title}
+                    </motion.h3>
+                    {project.status === 'In Development' && (
+                        <span className="text-[11px] font-medium text-amber-300 bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 rounded-md shrink-0">
+                            In Dev
+                        </span>
+                    )}
+                </div>
 
-                <p className="text-[#86868b] mb-8 leading-relaxed text-lg">
+                <p className="text-[#86868b] mb-6 leading-relaxed text-base flex-1">
                     {project.description}
                 </p>
 
@@ -134,32 +178,42 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                     ))}
                 </div>
 
-                <div className="flex items-center gap-6">
-                    <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ x: 3 }}
-                        className="flex items-center text-sm font-medium text-[#86868b] hover:text-[#f5f5f7] transition-colors group/link"
-                    >
-                        <Github className="w-5 h-5 mr-2" />
-                        Code
-                        <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                    </motion.a>
-                    <motion.a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ x: 3 }}
-                        className="flex items-center text-sm font-medium text-[#86868b] hover:text-[#f5f5f7] transition-colors group/link"
-                    >
-                        <ExternalLink className="w-5 h-5 mr-2" />
-                        Live Demo
-                        <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                    </motion.a>
+                <div className="flex items-center gap-6 pt-2 border-t border-white/5">
+                    {project.github ? (
+                        <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ x: 3 }}
+                            className="flex items-center text-sm font-medium text-[#86868b] hover:text-[#f5f5f7] transition-colors group/link"
+                        >
+                            <Github className="w-5 h-5 mr-2" />
+                            Code
+                            <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                        </motion.a>
+                    ) : null}
+
+                    {project.demo ? (
+                        <motion.a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ x: 3 }}
+                            className="flex items-center text-sm font-medium text-[#86868b] hover:text-[#f5f5f7] transition-colors group/link"
+                        >
+                            <ExternalLink className="w-5 h-5 mr-2" />
+                            Live Demo
+                            <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                        </motion.a>
+                    ) : null}
+
+                    {!project.github && !project.demo && (
+                        <span className="inline-flex items-center text-xs font-medium text-[#86868b]">
+                            Link available upon completion
+                        </span>
+                    )}
                 </div>
             </div>
         </motion.div>
     );
 }
-

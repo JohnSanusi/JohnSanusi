@@ -1,4 +1,4 @@
-  'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -102,7 +102,7 @@ export default function Hero() {
                             </div>
                         </motion.div>
 
-                        {/* Floating MERN Stack Icons */}
+                        {/* Floating Tech Stack Icons */}
                         {[
                             { Icon: SiMongodb, label: 'MongoDB', delay: 0, x: -80, y: -40, color: '#47A248' },
                             { Icon: SiExpress, label: 'Express', delay: 1, x: 80, y: -25, color: '#f5f5f7' },
@@ -155,14 +155,14 @@ export default function Hero() {
                         </motion.div>
 
                         <h1 className="text-5xl md:text-7xl font-bold text-[#f5f5f7] mb-6 tracking-tight leading-[1.1]">
-                            MERN Stack
+                            Full-Stack
                             <br />
                             Developer
                         </h1>
 
                         <p className="text-xl md:text-2xl text-[#86868b] mb-8 leading-relaxed">
                             Hi, I'm <span className="text-[#f5f5f7] font-semibold">John Sanusi</span>. 
-                            I architect scalable full-stack solutions using MongoDB, Express, React, and Node.js—transforming complex ideas into elegant digital experiences.
+                            I work with modern frontend and backend technologies to build responsive web applications, dashboards, APIs and database-driven systems.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
@@ -183,8 +183,6 @@ export default function Hero() {
                                 Contact Me
                             </motion.a>
                         </div>
-
-
                     </motion.div>
 
                     {/* Right Column - Visual Element */}
@@ -233,7 +231,7 @@ export default function Hero() {
                                 </div>
                             </motion.div>
 
-                            {/* Floating MERN Stack Icons */}
+                            {/* Floating Tech Stack Icons */}
                             {[
                                 { Icon: SiMongodb, label: 'MongoDB', delay: 0, x: -100, y: -50, color: '#47A248' },
                                 { Icon: SiExpress, label: 'Express', delay: 1, x: 100, y: -30, color: '#f5f5f7' },
@@ -288,4 +286,3 @@ export default function Hero() {
         </section>
     );
 }
-

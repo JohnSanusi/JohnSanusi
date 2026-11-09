@@ -9,7 +9,16 @@ import {
   Mail,
   User,
   MessageSquare,
+  Briefcase,
 } from "lucide-react";
+
+const availabilityAreas = [
+  "Full-stack development contracts",
+  "Frontend & backend implementation",
+  "Agency subcontracting & white-label development",
+  "Existing application improvements",
+  "Project-based development work",
+];
 
 export default function Contact() {
   const [status, setStatus] = useState<
@@ -64,7 +73,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -85,10 +94,22 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             />
-            <p className="text-[#86868b] text-xl">
-              Have a project in mind or just want to say hi? I'd love to hear
-              from you.
+            <p className="text-[#86868b] text-lg md:text-xl leading-relaxed mb-6">
+              I am open to new projects, subcontracting opportunities, and technical roles. Let&apos;s discuss how I can contribute to your team or build your next application.
             </p>
+
+            {/* Availability details */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {availabilityAreas.map((area, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-[#14171d]/80 text-xs font-medium text-[#b6bcc6]"
+                >
+                  <Briefcase className="w-3 h-3 text-sky-400" />
+                  {area}
+                </span>
+              ))}
+            </div>
           </div>
 
           <motion.form
@@ -125,7 +146,7 @@ export default function Contact() {
                   onFocus={() => setFocusedField("name")}
                   onBlur={() => setFocusedField(null)}
                   className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#1c1c1e] border border-[#38383a] text-[#f5f5f7] focus:border-[#f5f5f7] focus:ring-1 focus:ring-[#f5f5f7] outline-none transition-all placeholder-[#515155]"
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                 />
               </div>
             </div>
@@ -187,7 +208,7 @@ export default function Contact() {
                   onFocus={() => setFocusedField("message")}
                   onBlur={() => setFocusedField(null)}
                   className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#1c1c1e] border border-[#38383a] text-[#f5f5f7] focus:border-[#f5f5f7] focus:ring-1 focus:ring-[#f5f5f7] outline-none transition-all resize-none placeholder-[#515155]"
-                  placeholder="Tell me about your project..."
+                  placeholder="Tell me about your project, contract, or subcontracting needs..."
                 />
               </div>
             </div>
@@ -232,7 +253,7 @@ export default function Contact() {
                   exit={{ opacity: 0, y: -10 }}
                   className="flex items-center justify-center gap-2 text-[#f5f5f7] bg-[#1c1c1e] border border-[#38383a] rounded-xl p-4"
                 >
-                  <CheckCircle className="w-5 h-5" />
+                  <CheckCircle className="w-5 h-5 text-emerald-400" />
                   <span className="font-medium">
                     Message sent successfully!
                   </span>
@@ -245,7 +266,7 @@ export default function Contact() {
                   exit={{ opacity: 0, y: -10 }}
                   className="flex items-center justify-center gap-2 text-[#f5f5f7] bg-[#1c1c1e] border border-[#38383a] rounded-xl p-4"
                 >
-                  <XCircle className="w-5 h-5" />
+                  <XCircle className="w-5 h-5 text-rose-400" />
                   <span className="font-medium">
                     Something went wrong. Please try again.
                   </span>

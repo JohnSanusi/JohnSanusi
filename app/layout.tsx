@@ -11,9 +11,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "John Sanusi | Full Stack Developer",
+  title: "John Sanusi | Full-Stack Developer",
   description:
-    "Portfolio of John Sanusi, a Full Stack Developer specializing in the MERN stack.",
+    "Portfolio of John Sanusi, a Full-Stack Developer building responsive web applications, dashboards, APIs and database-driven systems.",
+  openGraph: {
+    title: "John Sanusi | Full-Stack Developer",
+    description:
+      "Portfolio of John Sanusi, a Full-Stack Developer building responsive web applications, dashboards, APIs and database-driven systems.",
+    type: "website",
+    siteName: "John Sanusi Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "John Sanusi | Full-Stack Developer",
+    description:
+      "Portfolio of John Sanusi, a Full-Stack Developer building responsive web applications, dashboards, APIs and database-driven systems.",
+  },
 };
 
 export default function RootLayout({
